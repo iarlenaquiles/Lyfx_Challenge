@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ details.title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div #map id="map"></div>
+
+  <ion-list>
+    <ion-item>Destiny: {{ details.destinyCity }}, {{ details.destinyState }}, {{ details.destinyCountry }}</ion-item>
+    <ion-item>Difficulty: {{ details.difficulty }}</ion-item>
+    <ion-item>Duration: {{ details.duration }}</ion-item>
+    <ion-item>Gear: {{ details.gear }}</ion-item>
+    <ion-item>Min Age: {{ details.minAge }}</ion-item>
+    <ion-item>Observation: {{ details.observation }}</ion-item>
+    <ion-item>Owner Email: {{ details.ownerEmail }}</ion-item>
+    <ion-item>Price: {{ details.price }}</ion-item>
+    <ion-item>Status: {{ details.status }}</ion-item>
+    <ion-item>Travellers: {{ details.travellers }}</ion-item>
+    <ion-item>Warnings: {{ details.warnings }}</ion-item>
+  </ion-list>
+
+  <ion-item-group>
+    <ion-item-divider color="light">Exceptions Date</ion-item-divider>
+    <ion-item *ngFor="let exception of details.exceptions_date">{{ exception.date }}</ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider color="light">Exceptions Week Day</ion-item-divider>
+    <ion-item *ngFor="let exception of details.exceptions_week_day">{{ exception }}</ion-item>
+  </ion-item-group>
+</ion-content>
